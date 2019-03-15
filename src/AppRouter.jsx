@@ -1,22 +1,15 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import {Provider} from 'react-redux';
+import FundsContainer from './containers/Funds/Funds.container';
 
-// import LoginUI from './presentational/Login/LoginUI';
-import Card from './components/Card/Card.component';
-
-import createStore from './config/store.config';
-
-import './app.css';
+import {Layout} from 'antd';
 
 const AppRouter = () =>(
-    <Provider store={createStore({initialState:{}})}>
         <Router>
-            <div className="main-container">
-                <Route exact path='/' component={Card}/>
-            </div>
+            <Layout className="layout">
+                <Route exact path='/' component={FundsContainer}/>
+            </Layout>
         </Router>
-    </Provider>
 );
 
 export default AppRouter;

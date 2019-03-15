@@ -5,3 +5,29 @@
 .close {
   cursor: pointer;
 }
+
+.card-instance {
+  margin: 30px 0px;
+  
+  border-radius: 3px;
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right
+}
+
+.yearReturn {
+  color: green;
+}
+
+.bigFont {
+  font-size: 20px;
+}

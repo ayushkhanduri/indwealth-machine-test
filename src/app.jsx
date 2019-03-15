@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 
 import AppRouter from './AppRouter';
 
+import 'antd/dist/antd.css'
+
+import unregister from './utils/interceptors';
+
+
 
 ReactDOM.render(<AppRouter/>,document.getElementById('app'));
 

@@ -8,8 +8,9 @@ const ENTRY_DIR = ['./src/app.jsx'];
 const minimizer = [];
 
 const plugins = [];
+const {NODE_ENV} = process.env;
 
-if(process.env.NODE_ENV === 'development'){
+if(NODE_ENV === 'development'){
     ENTRY_DIR.push('webpack-hot-middleware/client');
     plugins.push(new webpack.HotModuleReplacementPlugin());
 }else{
@@ -78,10 +79,11 @@ let webpackConfig = {
     optimization: {
         minimizer: minimizer
     },
-    mode: process.env.NODE_ENV,
+    mode: NODE_ENV,
     resolve: {
         extensions: ['.js','.jsx','.json']
-    }
+    },
+    devtool: NODE_ENV === 'development' ? 'cheap-module-eval-source-map' : 'cheap-source-map',
 }
 
 module.exports = webpackConfig;
